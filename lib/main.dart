@@ -1,3 +1,6 @@
+import 'dart:html';
+import 'dart:ui';
+
 import 'package:concentric_transition/concentric_transition.dart';
 import 'package:flutter/material.dart';
 
@@ -11,21 +14,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<dynamic> pages = [
-      {
-        'image':
-            'https://raw.githubusercontent.com/anuragdandge/car_rental/master/assets/img/img1.png'
-      },
-      // {
-      //   'image':
-      //       'https://github.com/anuragdandge/car_rental/blob/master/assets/img/img2.png'
-      // },
-      // {
-      //   'image':
-      //       'https://github.com/anuragdandge/car_rental/blob/master/assets/img/img3.png'
-      // },
+      {'image': 'assets/img/img1.png'},
+      {'image': 'assets/img/img2.png'},
+      {'image': 'assets/img/img3.png'},
     ];
     return MaterialApp(
       home: Scaffold(
+        
         body: ConcentricPageView(
           radius: 30,
           verticalPosition: 0.85,
@@ -33,6 +28,7 @@ class MyApp extends StatelessWidget {
           itemBuilder: (index, value) {
             int pageIndex = (index % pages.length);
             return Container(
+            
                 child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [Image.network(pages[pageIndex]['image'], width: 300)],
